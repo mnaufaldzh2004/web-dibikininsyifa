@@ -20,6 +20,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'role_id',
+        'phone',
+        'profile_image',
+        'status',
         'password',
     ];
 
@@ -45,4 +49,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+        public function ilustrator()
+        {
+            return $this->hasOne(Ilustrator::class);
+        }
 }

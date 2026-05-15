@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('ilustrators', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-
+            $table->string('nama_proyek');
+            $table->text('deskripsi');
+            $table->string('image')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

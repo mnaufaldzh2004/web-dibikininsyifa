@@ -1,0 +1,91 @@
+
+@include('user.layouts.__header')
+
+@include('user.layouts.__navbar')
+
+<section class="hero" id="home">
+    <div class="container ">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h1 class="mb-3">Hi, Aku <br>{{ $ilustrator->name }}</h1>
+                <p class="mb-4">
+                Aku Bisa Membuat Ilustrasi digital dengan gaya soft color dan detail wajah yang halus. Cocok untuk hadiah wisuda, pasangan, dan keluarga.
+                </p>
+                <a href="{{ url('/order') }}" class="btn btn-pink me-2">
+                  <i class="bi bi-linkedin"></i></i> Cek Linkedin
+                </a>
+                <a href="#layanan" class="btn btn-outline-pink"><i class="bi bi-whatsapp"></i> Hubungi whatsapp </a>
+            </div>
+            <div class="col-lg-6 text-center">
+                {{-- Placeholder gambar hero --}}
+                <img src="{{asset($ilustrator->profile_image) }}"
+                     alt="Hero Ilustrasi"
+                     class=" rounded-4 shadow-sm" style="height: 100; width: 400px">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="layanan " class="slide-in-left">
+    <div class="container ">
+        <div class="section-title ">
+            <h2>Portofolio Saya</h2>
+            <p>Berbagai Ilustrasi yang sudah saya kerjakan</p>
+        </div>
+
+        @php
+            $layanan = [
+                ['nama' => 'Couple Portrait Illustration',  'desk' => 'Ilustrasi custom pasangan dengan gaya soft pastel dan detail wajah yang sederhana. Cocok digunakan sebagai hadiah anniversary atau foto profil pasangan.'],
+                ['nama' => 'Family Digital Art',  'desk' => 'Ilustrasi keluarga dengan konsep hangat dan aesthetic menggunakan warna lembut. Cocok untuk dekorasi ruangan maupun hadiah keluarga.'],
+                ['nama' => 'Graduation Portrait',  'desk' => 'Ilustrasi wisuda dengan sentuhan semi realistis dan detail toga yang rapi. Banyak digunakan sebagai kenang-kenangan momen kelulusan.'],
+            ];
+        @endphp
+
+        <div class="row g-4">
+        
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-custom h-100">
+                        <img src="{{ asset('img/porto33.jpeg') }}"
+                                class="card-top-img"  style="height: 400px;" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Couple Portrait Illustration</h5>
+                            <div class="price-tag mb-2"></div>
+                            <p class="card-text text-muted">Ilustrasi custom pasangan dengan gaya soft pastel dan detail wajah yang sederhana. Cocok digunakan sebagai hadiah anniversary atau foto profil pasangan.</p>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-custom h-100">
+                        <img src="{{ asset('img/keluarga.jpeg') }}"
+                             class="card-top-img"  style="height: 400px;" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Family Digital Art</h5>
+                            <div class="price-tag mb-2"></div>
+                            <p class="card-text text-muted">Ilustrasi keluarga dengan konsep hangat dan aesthetic menggunakan warna lembut. Cocok untuk dekorasi ruangan maupun hadiah keluarga.</p>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-custom h-100">
+                        <img src="{{ asset('img/graduation.jpeg') }}"
+                             class="card-top-img" style="height: 400px;" alt=""> 
+                        <div class="card-body">
+                            <h5 class="card-title">Graduation Portrait</h5>
+                            <div class="price-tag mb-2"></div>
+                            <p class="card-text text-muted">Ilustrasi wisuda dengan sentuhan semi realistis dan detail toga yang rapi. Banyak digunakan sebagai kenang-kenangan momen kelulusan.</p>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+
+        </div>
+    </div>
+</section>
+
+@include('user.layouts.__footer')

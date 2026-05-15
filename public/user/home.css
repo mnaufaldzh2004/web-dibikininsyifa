@@ -1,0 +1,296 @@
+ 
+        :root {
+            --pink-pastel: #ffd1dc;
+            --pink-soft: #ffe4ec;
+            --pink-deep: #f7a8be;
+            --abu-muda: #f6f6f8;
+            --teks-gelap: #2b2b2b;
+            --abu-teks: #6c757d;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--teks-gelap);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, .heading-serif {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--teks-gelap);
+        }
+
+        /* Navbar */
+        .navbar-custom {
+            background-color: #ffffff;
+            border-bottom: 1px solid #f1f1f1;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .navbar-custom .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--teks-gelap);
+        }
+
+        .navbar-custom .navbar-brand span {
+            color: var(--pink-deep);
+        }
+
+        .navbar-custom .nav-link {
+            color: var(--teks-gelap);
+            font-weight: 400;
+            margin: 0 0.4rem;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: var(--pink-deep);
+        }
+
+        /* Tombol */
+        .btn-pink {
+            background-color: var(--pink-pastel);
+            color: var(--teks-gelap);
+            border: none;
+            padding: 0.6rem 1.6rem;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-pink:hover {
+            background-color: var(--pink-deep);
+            color: #ffffff;
+        }
+
+        .btn-outline-pink {
+            background-color: transparent;
+            color: var(--teks-gelap);
+            border: 1px solid var(--pink-deep);
+            padding: 0.6rem 1.6rem;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        .btn-outline-pink:hover {
+            background-color: var(--pink-pastel);
+            color: var(--teks-gelap);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--pink-soft) 0%, #ffffff 100%);
+            padding: 5rem 0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--abu-teks);
+            font-size: 1.05rem;
+        }
+
+        /* Section umum */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+        }
+
+        .section-title p {
+            color: var(--abu-teks);
+        }
+
+        /* Card */
+        .card-custom {
+            border: none;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-custom .card-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .price-tag {
+            color: var(--pink-deep);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        /* Cara kerja */
+        .step-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--pink-soft);
+            color: var(--pink-deep);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Portfolio */
+        .portfolio-img {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        /* Keunggulan */
+        .feature-item i {
+            color: var(--pink-deep);
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+        }
+
+        /* Testimoni */
+        .testimoni-card {
+            background-color: var(--abu-muda);
+            border: none;
+            border-radius: 14px;
+            padding: 1.5rem;
+        }
+
+        .testimoni-card .nama {
+            font-weight: 600;
+            margin-top: 0.75rem;
+        }
+
+        .testimoni-card .role {
+            font-size: 0.85rem;
+            color: var(--abu-teks);
+        }
+
+        /* CTA */
+        .cta {
+            background-color: var(--pink-soft);
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2b2b;
+            color: #f1f1f1;
+            padding: 2.5rem 0 1.5rem;
+        }
+
+        footer h5 {
+            color: var(--pink-pastel);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: #d4d4d4;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--pink-pastel);
+        }
+
+        footer .sosial a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #3a3a3a;
+            margin-right: 0.4rem;
+        }
+
+        .copyright {
+            border-top: 1px solid #3a3a3a;
+            padding-top: 1rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #999;
+            text-align: center;
+        }
+
+        /* Form */
+        .form-card {
+            border: none;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--teks-gelap);
+        }
+
+        .form-control, .form-select {
+            border-radius: 8px;
+            padding: 0.6rem 0.9rem;
+            border: 1px solid #e3e3e3;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--pink-deep);
+            box-shadow: 0 0 0 0.2rem rgba(247, 168, 190, 0.25);
+        }
+
+        /* Ringkasan pesanan */
+        .ringkasan-card {
+            background-color: var(--pink-soft);
+            border: none;
+            border-radius: 14px;
+            padding: 1.75rem;
+            position: sticky;
+            top: 90px;
+        }
+
+        .ringkasan-card h5 {
+            margin-bottom: 1rem;
+        }
+
+        .ringkasan-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            font-size: 0.95rem;
+        }
+
+        .ringkasan-total {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            section { padding: 2.5rem 0; }
+        }
+ 
