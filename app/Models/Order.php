@@ -20,7 +20,8 @@ class Order extends Model
         'payment_date',
         'invoice_url',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'notes'
     ];
 
 
