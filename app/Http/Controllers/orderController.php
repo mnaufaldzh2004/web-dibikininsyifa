@@ -98,8 +98,10 @@ if ($request->opsi) {
         'status' => 'pending',
         'total_price' => $totalPrice,
         'image' => $imagePath,
-        'payment_date' => null
+        'payment_date' => null,
+        'notes' => $request->notes
     ]);
+     
 
    foreach ($options as $option) {
 
