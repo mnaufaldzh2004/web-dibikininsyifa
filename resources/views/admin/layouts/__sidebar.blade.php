@@ -46,7 +46,7 @@
                     <li class="sidebar-title">Menu</li>
                      {{-- @if(Auth::user()->role->role_name == 'admin') --}}
                    <li class="sidebar-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                        <a href="" class='sidebar-link'>
+                        <a href="{{route('dashboard')}}" class='sidebar-link'>
                             <i class="bi bi-grid-fill"></i>
                             <span>Dashboard</span>
                         </a>
@@ -66,10 +66,16 @@
                             <span>Kelola Order</span>
                         </a>
                     </li>
-                     <li class="sidebar-item {{ request()->routeIs('orders') ? 'active' : '' }}">
-                        <a href="" class='sidebar-link'>
+                     <li class="sidebar-item {{ request()->routeIs('services.*') ? 'active' : '' }}">
+                        <a href="{{route('services.index')}}" class='sidebar-link'>
                            <i class="bi bi-brush-fill"></i>
                             <span>Kelola layanan</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item {{ request()->routeIs('options.*') ? 'active' : '' }}">
+                        <a href="{{route('options.index')}}" class='sidebar-link'>
+                          <i class="bi bi-plus-circle-fill"></i>
+                            <span>Kelola Opsi Tambahan</span>
                         </a>
                     </li>
            
@@ -79,14 +85,14 @@
 
                    
 
-                    <li class="sidebar-item {{ request()->routeIs('users.*') ? 'active' : '' }}">
-                        <a href="" class='sidebar-link'>
+                    <li class="sidebar-item {{ request()->routeIs('ilustrator.*') ? 'active' : '' }}">
+                        <a href="{{route('ilustrator.index')}}" class='sidebar-link'>
                             <i class="bi bi-people-fill"></i>
                             <span>Manajemen Ilustrator</span>
                         </a>
                     </li>
                     <li class="sidebar-item {{ request()->routeIs('roles.*') ? 'active' : '' }}">
-                        <a href="" class='sidebar-link'>
+                        <a href="{{route('roles.index')}}" class='sidebar-link'>
                             <i class="bi bi-person-fill-gear"></i>
                             <span>Manajemen Role</span>
                         </a>

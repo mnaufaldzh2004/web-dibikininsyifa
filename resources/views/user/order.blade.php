@@ -243,28 +243,25 @@ ilustratorSelect.addEventListener(
    document.addEventListener('DOMContentLoaded', function () {
     const checkboxes = document.querySelectorAll('.option-checkbox');
     const containerRingkasan = document.getElementById('container-ringkasan-opsi');
-    
-    // Ambil elemen total harga dan nilai base_price dari Laravel tadi
+   
     const totalHargaElement = document.getElementById('total-harga');
     const basePrice = parseFloat(totalHargaElement.getAttribute('data-base-price')) || 0;
 
-    // Kita bungkus logikanya ke dalam satu fungsi agar bisa dipanggil berulang kali
+  
     function hitungTotal() {
-        // 1. Bersihkan dulu isi container ringkasan opsi tambahan
+      
         containerRingkasan.innerHTML = '';
         
         let totalAdditionalPrice = 0;
         const checkedOptions = document.querySelectorAll('.option-checkbox:checked');
 
-        // 2. Jalankan perulangan untuk mengambil opsi yang dicentang
         checkedOptions.forEach(function (activeCheckbox) {
             const optionName = activeCheckbox.getAttribute('data-name');
             const optionPrice = parseFloat(activeCheckbox.getAttribute('data-price')) || 0;
             
-            // Tambahkan harga opsi ke total harga tambahan
+          
             totalAdditionalPrice += optionPrice;
 
-            // Munculkan baris opsi tambahan di ringkasan
             const rowHTML = `
                 <div class="ringkasan-row d-flex justify-content-between mb-1">
                     <span>${optionName}</span>
@@ -274,16 +271,14 @@ ilustratorSelect.addEventListener(
             containerRingkasan.insertAdjacentHTML('beforeend', rowHTML);
         });
 
-        // 3. Rumus Perhitungan: (Harga Dasar + Total Opsi) + Pajak 2%
         const subtotal = basePrice + totalAdditionalPrice;
         const pajak = subtotal * 0.02;
-        const totalAkhir = subtotal + pajak; // Atau bisa langsung: subtotal * 1.02
+        const totalAkhir = subtotal + pajak; 
 
-        // 4. Update teks Total Harga di HTML (dibulatkan dengan Math.round agar tidak ada desimal)
         totalHargaElement.textContent = 'Rp ' + Math.round(totalAkhir).toLocaleString('id-ID');
     }
 
-    // Jalankan fungsi setiap kali ada checkbox yang dicentang/diubah
+   
     checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener('change', hitungTotal);
     });

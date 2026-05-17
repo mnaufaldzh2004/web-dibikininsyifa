@@ -14,17 +14,17 @@
         @endphp
 
         <div class="row g-4">
-                @foreach($ilustrators as $ilustrator)
+                @foreach($ilustrators as $illustrator)
                 <div class="col-md-6 col-lg-4">
                     <div class="card card-custom h-100">
-                        <img src="{{ asset($ilustrator->profile_image) }}"
+                        <img src="{{ asset('storage/'. $illustrator->user->profile_image ?? '-') }}"
                              class="card-img-top" style="height: 536px;" alt="">
                         <div class="card-body">
 
-                            <h5 class="card-title">{{ $ilustrator->name }}</h5>
-                            <div class="price-tag mb-2">Ilustrator</div>
+                            <h5 class="card-title">{{ $illustrator->name }}</h5>
+                            <div class="price-tag mb-2">{{ $illustrator->user->name }}</div>
                             <p class="card-text text-muted">Saya adalah lulusan UI jurusan DKV</p>
-                            <a href="{{ route('user.portofolio', $ilustrator->id) }}" class="btn btn-pink btn-sm">Lihat Detail Ilustrator</a>
+                            <a href="{{ route('user.portofolio', $illustrator->id) }}" class="btn btn-pink btn-sm">Lihat Detail Ilustrator</a>
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,11 @@ use App\Http\Controllers\orderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\landingPageController;
 use App\Http\Controllers\admin\dashboardController;
+use App\Http\Controllers\admin\ilustratorController;
+use App\Http\Controllers\admin\optionController;
+use App\Http\Controllers\admin\roleController;
+use App\Http\Controllers\admin\serviceController;
+
 // Route::get('/', function () {
 //     return view('user.home');
 // });
@@ -36,3 +41,7 @@ Route::get('/success/{orderId}', [orderController::class, 'paymentSuccess'])->na
 Route::get('dashboard', [dashboardController::class, 'index'])->name('dashboard');
 Route::get('all-order', [allOrderController::class, 'index'])->name('allorder');
 Route::get('detail-order/{orderId}', [allOrderController::class, 'show'])->name('detailorder.show');
+Route::resource('ilustrator', ilustratorController::class);
+Route::resource('services', serviceController::class);
+Route::resource('roles', roleController::class);
+Route::resource('options', optionController::class);
