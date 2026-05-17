@@ -35,3 +35,4 @@ Route::get('/success/{orderId}', [orderController::class, 'paymentSuccess'])->na
 
 Route::get('dashboard', [dashboardController::class, 'index'])->name('dashboard');
 Route::get('all-order', [allOrderController::class, 'index'])->name('allorder');
+Route::get('detail-order/{orderId}', [allOrderController::class, 'show'])->name('detailorder.show');

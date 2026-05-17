@@ -92,7 +92,7 @@
                            
                             <td>
                                 <span class="btn btn-primary btn-sm">
-                                    <a href="" class="text-white">
+                                    <a href="{{route('detailorder.show', $order->id)}}" class="text-white">
                                         <i class="bi bi-eye"></i> View
                                     </a>
                                 </span>
