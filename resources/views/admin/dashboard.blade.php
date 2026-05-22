@@ -9,10 +9,22 @@
 
     <div class="page-heading">
 
-        <h3>Selamat Datang, Admin dibikininsyifa</h3>
+        <h3>Selamat Datang,  {{Auth::user()->email }} sebagai {{Auth::user()->role->name}} dibikininsyifa</h3>
     </div>
 
-
+     @if (Auth::user()->role->name == 'ilustrator' && Auth::user()->status == 'active')
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Akun</h4>
+            </div>
+            <div class="card-body">
+                Silahkan Ubah password untuk login pertama kali dengan mengklik tombol dibawah ini
+            </div>
+            <div class="card-body">
+                <a href="" class="btn btn-primary">Ubah Password</a>
+            </div>
+        </div>
+    @else
         <div class="page-content">
             <section class="row">
                 <div class="col-12 col-lg-12">
@@ -92,6 +104,7 @@
                 </div>
             </section>
         </div>
+        @endif
     
 @endsection
 @section('script')

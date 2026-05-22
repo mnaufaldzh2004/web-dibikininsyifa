@@ -43,48 +43,25 @@
         @endphp
 
         <div class="row g-4">
-        
+        @foreach($portofolios as $portofolio)
                 <div class="col-md-6 col-lg-4">
                     <div class="card card-custom h-100">
-                        <img src="{{ asset('img/porto33.jpeg') }}"
+                        <img src="{{ asset('storage/' . $portofolio->image_portofolio) }}"
                                 class="card-top-img"  style="height: 400px;" alt="">
                         <div class="card-body">
-                            <h5 class="card-title">Couple Portrait Illustration</h5>
+                            <h5 class="card-title">{{ $portofolio->portofolio_name }}</h5>
                             <div class="price-tag mb-2"></div>
-                            <p class="card-text text-muted">Ilustrasi custom pasangan dengan gaya soft pastel dan detail wajah yang sederhana. Cocok digunakan sebagai hadiah anniversary atau foto profil pasangan.</p>
-                            
+                            <p class="card-text text-muted">{{ $portofolio->portofolio_description }}</p>
+
                         </div>
                     </div>
                     
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-custom h-100">
-                        <img src="{{ asset('img/keluarga.jpeg') }}"
-                             class="card-top-img"  style="height: 400px;" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Family Digital Art</h5>
-                            <div class="price-tag mb-2"></div>
-                            <p class="card-text text-muted">Ilustrasi keluarga dengan konsep hangat dan aesthetic menggunakan warna lembut. Cocok untuk dekorasi ruangan maupun hadiah keluarga.</p>
-                            
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-custom h-100">
-                        <img src="{{ asset('img/graduation.jpeg') }}"
-                             class="card-top-img" style="height: 400px;" alt=""> 
-                        <div class="card-body">
-                            <h5 class="card-title">Graduation Portrait</h5>
-                            <div class="price-tag mb-2"></div>
-                            <p class="card-text text-muted">Ilustrasi wisuda dengan sentuhan semi realistis dan detail toga yang rapi. Banyak digunakan sebagai kenang-kenangan momen kelulusan.</p>
-                            
-                        </div>
-                    </div>
-                    
-                </div>
+              @endforeach
+         
 
         </div>
+        
     </div>
 </section>
 

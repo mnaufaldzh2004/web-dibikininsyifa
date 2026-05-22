@@ -1,4 +1,4 @@
-<section id="layanan " class="slide-in-left">
+<section id="layanan" class="slide-in-left">
     <div class="container ">
         <div class="section-title ">
             <h2>Layanan Kami</h2>

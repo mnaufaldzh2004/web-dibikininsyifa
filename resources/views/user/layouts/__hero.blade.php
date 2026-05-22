@@ -7,7 +7,7 @@
                     Ubah foto kesayangan Anda menjadi ilustrasi artistik yang unik dan personal.
                     Cocok untuk hadiah, kenang-kenangan, atau koleksi pribadi.
                 </p>
-                <a href="{{ url('/order') }}" class="btn btn-pink me-2">
+                <a href="{{ url('/') }}#layanan" class="btn btn-pink me-2">
                     <i class="bi bi-brush me-1"></i> Pesan Sekarang
                 </a>
                 <a href="#layanan" class="btn btn-outline-pink">Lihat Layanan</a>

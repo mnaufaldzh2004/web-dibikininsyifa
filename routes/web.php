@@ -7,9 +7,11 @@ use App\Http\Controllers\landingPageController;
 use App\Http\Controllers\admin\dashboardController;
 use App\Http\Controllers\admin\ilustratorController;
 use App\Http\Controllers\admin\optionController;
+use App\Http\Controllers\admin\portofolioController;
 use App\Http\Controllers\admin\roleController;
 use App\Http\Controllers\admin\serviceController;
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 // Route::get('/', function () {
 //     return view('user.home');
 // });
@@ -36,12 +38,37 @@ Route::post('/payments/webhook', [orderController::class, 'handleCallback']);
 Route::get('/success/{orderId}', [orderController::class, 'paymentSuccess'])->name('success');
 
 
-//dashboard 
+Route::middleware('guest')->group(function(){
+     Route::get('login', [AuthenticatedSessionController::class, 'create']) ->name('login');
+  Route::post('login', [AuthenticatedSessionController::class, 'store']);
+});
+ 
 
-Route::get('dashboard', [dashboardController::class, 'index'])->name('dashboard');
-Route::get('all-order', [allOrderController::class, 'index'])->name('allorder');
+//dashboard  untuk admin
+
+Route::middleware('role:admin')->group(function(){
+    Route::resource('ilustrator', ilustratorController::class);
+    Route::resource('services', serviceController::class);
+    Route::resource('roles', roleController::class);
+    Route::resource('options', optionController::class);
+});
+
+
+//dashboard ilustrator dan admin
+
+Route::middleware('role:admin|ilustrator')->group(function(){ 
+ Route::get('dashboard', [dashboardController::class, 'index'])->name('dashboard');
+    Route::get('all-order', [allOrderController::class, 'index'])->name('allorder');
 Route::get('detail-order/{orderId}', [allOrderController::class, 'show'])->name('detailorder.show');
-Route::resource('ilustrator', ilustratorController::class);
-Route::resource('services', serviceController::class);
-Route::resource('roles', roleController::class);
-Route::resource('options', optionController::class);
+Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+});
+
+Route::middleware('role:ilustrator')->group(function(){
+    Route::resource('portofolio', portofolioController::class);
+});
+
+
+
+
+
+// require __DIR__.'/auth.php';
