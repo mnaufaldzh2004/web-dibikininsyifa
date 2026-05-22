@@ -16,7 +16,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ url('/') }}#Ilustrator">Ilustrator</a></li>
                     
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-pink btn-sm" href="#">Login</a>
+                        <a class="btn btn-outline-pink btn-sm" href="{{ url('/')}}#footer">Contact us</a>
                     </li>
                 </ul>
             </div>

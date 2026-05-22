@@ -1,6 +1,6 @@
  {{-- Footer --}}
     <footer>
-        <div class="container">
+        <div class="container" id="footer">
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <h5>DibikinInSyifa</h5>
