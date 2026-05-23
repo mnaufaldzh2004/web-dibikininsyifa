@@ -26,4 +26,12 @@ class PasswordController extends Controller
 
         return back()->with('status', 'password-updated');
     }
+
+
+    public function index(){
+
+    return view('auth.edit-password');
+    }
+
+
 }

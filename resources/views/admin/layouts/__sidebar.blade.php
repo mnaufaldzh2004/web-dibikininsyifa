@@ -8,8 +8,8 @@
                     </h4>
                     <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20"
-                            height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
+                            aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20" height="20"
+                            preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
                             <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path
@@ -44,82 +44,81 @@
             <div class="sidebar-menu">
                 <ul class="menu">
                     <li class="sidebar-title">Menu</li>
-                     {{-- @if(Auth::user()->role->role_name == 'admin') --}}
-                   <li class="sidebar-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                    {{-- @if(Auth::user()->role->role_name == 'admin') --}}
+                    <li class="sidebar-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                         <a href="{{route('dashboard')}}" class='sidebar-link'>
                             <i class="bi bi-grid-fill"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     {{-- @else --}}
-                        <li class="sidebar-item {{ request()->routeIs('profile.*') ? 'active' : '' }}">
+                    <li class="sidebar-item {{ request()->routeIs('profile.*') ? 'active' : '' }}">
                         <a href="{{ route('profile.index') }}" class='sidebar-link'>
                             <i class="bi bi-person-fill"></i>
                             <span>Profile</span>
                         </a>
                     </li>
-                     <li class="sidebar-item {{ request()->routeIs('allorder') ? 'active' : '' }}">
+                    <li class="sidebar-item {{ request()->routeIs('allorder') ? 'active' : '' }}">
                         <a href="{{route('allorder')}}" class='sidebar-link'>
                             <i class="bi bi-cart-fill"></i>
                             <span>Kelola Order</span>
                         </a>
                     </li>
-                   
+
                     @if(Auth::user()->role->name == 'admin')
-                   
-                     
-                     <li class="sidebar-item {{ request()->routeIs('services.*') ? 'active' : '' }}">
-                        <a href="{{route('services.index')}}" class='sidebar-link'>
-                           <i class="bi bi-brush-fill"></i>
-                            <span>Kelola layanan</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item {{ request()->routeIs('options.*') ? 'active' : '' }}">
-                        <a href="{{route('options.index')}}" class='sidebar-link'>
-                          <i class="bi bi-plus-circle-fill"></i>
-                            <span>Kelola Opsi Tambahan</span>
-                        </a>
-                    </li>
-           
-                  
-           
-                  
 
-                   
 
-                    <li class="sidebar-item {{ request()->routeIs('ilustrator.*') ? 'active' : '' }}">
-                        <a href="{{route('ilustrator.index')}}" class='sidebar-link'>
-                            <i class="bi bi-people-fill"></i>
-                            <span>Manajemen Ilustrator</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item {{ request()->routeIs('roles.*') ? 'active' : '' }}">
-                        <a href="{{route('roles.index')}}" class='sidebar-link'>
-                            <i class="bi bi-person-fill-gear"></i>
-                            <span>Manajemen Role</span>
-                        </a>
-                    </li>
-                     <li class="sidebar-item {{ request()->routeIs('editPassword') ? 'active' : '' }}">
-                        <a href="" class='sidebar-link'>
-                           <i class="bi bi-key-fill"></i>
+                        <li class="sidebar-item {{ request()->routeIs('services.*') ? 'active' : '' }}">
+                            <a href="{{route('services.index')}}" class='sidebar-link'>
+                                <i class="bi bi-brush-fill"></i>
+                                <span>Kelola layanan</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item {{ request()->routeIs('options.*') ? 'active' : '' }}">
+                            <a href="{{route('options.index')}}" class='sidebar-link'>
+                                <i class="bi bi-plus-circle-fill"></i>
+                                <span>Kelola Opsi Tambahan</span>
+                            </a>
+                        </li>
+
+
+
+
+
+
+
+                        <li class="sidebar-item {{ request()->routeIs('ilustrator.*') ? 'active' : '' }}">
+                            <a href="{{route('ilustrator.index')}}" class='sidebar-link'>
+                                <i class="bi bi-people-fill"></i>
+                                <span>Manajemen Ilustrator</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item {{ request()->routeIs('roles.*') ? 'active' : '' }}">
+                            <a href="{{route('roles.index')}}" class='sidebar-link'>
+                                <i class="bi bi-person-fill-gear"></i>
+                                <span>Manajemen Role</span>
+                            </a>
+                        </li>
+
+                    @else
+
+                        <li class="sidebar-item {{ request()->routeIs('portofolio.*') ? 'active' : '' }}">
+                            <a href="{{route('portofolio.index')}}" class='sidebar-link'>
+                                <i class="bi bi-person-video3"></i>
+                                <span>Portofolio</span>
+                            </a>
+                        </li>
+
+                    @endif
+                    {{-- @endif --}}
+                    <li class="sidebar-item {{ request()->routeIs('editPassword') ? 'active' : '' }}">
+                        <a href="{{ route('editPassword') }}" class='sidebar-link'>
+                            <i class="bi bi-key-fill"></i>
                             <span>Ubah Password</span>
                         </a>
                     </li>
-                  @else
-                     
-                     <li class="sidebar-item {{ request()->routeIs('portofolio.*') ? 'active' : '' }}">
-                        <a href="{{route('portofolio.index')}}" class='sidebar-link'>
-                        <i class="bi bi-person-video3"></i>
-                            <span>Portofolio</span>
-                        </a>
-                    </li>
-               
-                 @endif
-                 {{-- @endif --}}
-
                     <li class="sidebar-item">
-                        <form method="POST" action="{{route('logout')}}"
-                            onclick="event.preventDefault(); 
+                        <form method="POST" action="{{route('logout')}}" onclick="event.preventDefault(); 
                         if (confirm('Apakah anda yakin ingin logout?')) { 
                          this.closest('form').submit(); }">
                             @csrf

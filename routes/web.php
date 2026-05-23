@@ -12,6 +12,7 @@ use App\Http\Controllers\admin\roleController;
 use App\Http\Controllers\admin\serviceController;
 use App\Http\Controllers\admin\profileController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\PasswordController;
 // Route::get('/', function () {
 //     return view('user.home');
 // });
@@ -60,6 +61,8 @@ Route::middleware('role:admin|ilustrator')->group(function(){
  Route::get('dashboard', [dashboardController::class, 'index'])->name('dashboard');
     Route::get('all-order', [allOrderController::class, 'index'])->name('allorder');
 Route::get('detail-order/{orderId}', [allOrderController::class, 'show'])->name('detailorder.show');
+Route::get('editPassword', [PasswordController::class, 'index'])->name('editPassword');
+Route::put('updatePassword', [PasswordController::class, 'update'])->name('password.update');
 Route::resource('profile', profileController::class);
 Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });

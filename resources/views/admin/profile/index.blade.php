@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{env('APP_URL')}}/admin/extensions/simple-datatables/style.css">
     <link rel="stylesheet" href="{{env('APP_URL')}}/admin/compiled/css/table-datatable.css">
 @endsection
-
+    
 
 
 

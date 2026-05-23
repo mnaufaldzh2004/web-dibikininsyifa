@@ -21,7 +21,7 @@
                 Silahkan Ubah password untuk login pertama kali dengan mengklik tombol dibawah ini
             </div>
             <div class="card-body">
-                <a href="" class="btn btn-primary">Ubah Password</a>
+                <a href="{{ route('editPassword') }}" class="btn btn-primary">Ubah Password</a>
             </div>
         </div>
     @else
