@@ -7,7 +7,7 @@
     <div class="container ">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <h1 class="mb-3">Hi, Aku <br>{{ $ilustrators->user->name }}</h1>
+                <h1 class="mb-3">Hi, Aku <br>{{ $ilustrators->name }}</h1>
                 <p class="mb-4">
                 Aku Bisa Membuat Ilustrasi digital dengan gaya soft color dan detail wajah yang halus. Cocok untuk hadiah wisuda, pasangan, dan keluarga.
                 </p>
@@ -18,7 +18,7 @@
             </div>
             <div class="col-lg-6 text-center">
                 {{-- Placeholder gambar hero --}}
-                <img src="{{asset('storage/'. $ilustrators->user->profile_image) }}"
+                <img src="{{asset('storage/'. $ilustrators->profile_image) }}"
                      alt="Hero Ilustrasi"
                      class=" rounded-4 shadow-sm" style="height: 100; width: 400px">
             </div>

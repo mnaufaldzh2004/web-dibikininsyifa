@@ -18,7 +18,7 @@ class landingPageController extends Controller
 
     public function detailIlustrator($id){
 
-     $ilustrators = Ilustrator::with(['user'])->get()->findOrFail($id);
+      $ilustrators = User::where('id', $id)->first();
  
      $portofolios = Ilustrator::where('user_id', $id)->orderBy('updated_at', 'asc')->get();
      return view('user.userPortofolio', compact('ilustrators', 'portofolios'));

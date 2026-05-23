@@ -52,8 +52,8 @@
                         </a>
                     </li>
                     {{-- @else --}}
-                        <li class="sidebar-item {{ request()->routeIs('') ? 'active' : '' }}">
-                        <a href="" class='sidebar-link'>
+                        <li class="sidebar-item {{ request()->routeIs('profile.*') ? 'active' : '' }}">
+                        <a href="{{ route('profile.index') }}" class='sidebar-link'>
                             <i class="bi bi-person-fill"></i>
                             <span>Profile</span>
                         </a>
@@ -64,15 +64,10 @@
                             <span>Kelola Order</span>
                         </a>
                     </li>
-                     <li class="sidebar-item {{ request()->routeIs('portofolio.*') ? 'active' : '' }}">
-                        <a href="{{route('portofolio.index')}}" class='sidebar-link'>
-                        <i class="bi bi-person-video3"></i>
-                            <span>Portofolio</span>
-                        </a>
-                    </li>
+                   
                     @if(Auth::user()->role->name == 'admin')
                    
-
+                     
                      <li class="sidebar-item {{ request()->routeIs('services.*') ? 'active' : '' }}">
                         <a href="{{route('services.index')}}" class='sidebar-link'>
                            <i class="bi bi-brush-fill"></i>
@@ -104,11 +99,18 @@
                             <span>Manajemen Role</span>
                         </a>
                     </li>
-                  @else
-                      <li class="sidebar-item {{ request()->routeIs('editPassword') ? 'active' : '' }}">
+                     <li class="sidebar-item {{ request()->routeIs('editPassword') ? 'active' : '' }}">
                         <a href="" class='sidebar-link'>
                            <i class="bi bi-key-fill"></i>
                             <span>Ubah Password</span>
+                        </a>
+                    </li>
+                  @else
+                     
+                     <li class="sidebar-item {{ request()->routeIs('portofolio.*') ? 'active' : '' }}">
+                        <a href="{{route('portofolio.index')}}" class='sidebar-link'>
+                        <i class="bi bi-person-video3"></i>
+                            <span>Portofolio</span>
                         </a>
                     </li>
                

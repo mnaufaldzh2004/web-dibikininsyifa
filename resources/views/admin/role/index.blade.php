@@ -44,7 +44,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $role->name }}</td>
-                            <td>{{ $role->description,15}}</td>
+                            <td>{{ $role->description}}</td>
                             <td>
                                 <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-warning btn-sm">
                                     <i class="bi bi-pencil"></i> Ubah
