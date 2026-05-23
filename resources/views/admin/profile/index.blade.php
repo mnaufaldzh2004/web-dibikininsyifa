@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title', 'Daftar Pesanan')
+@section('title', 'Profile')
 
 @section('css')
     <link rel="stylesheet" href="{{env('APP_URL')}}/admin/extensions/simple-datatables/style.css">
