@@ -70,6 +70,7 @@ class profileController extends Controller
             'phone' => 'string|nullable',
             'description' => 'string|nullable',
             'profile_image' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
+            'description' => 'string|nullable',
         ]);
         
          if ($request->hasFile('profile_image')) {

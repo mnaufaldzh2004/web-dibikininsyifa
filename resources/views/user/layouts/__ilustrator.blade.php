@@ -23,7 +23,7 @@
 
                             <h5 class="card-title">{{ $illustrator->name }}</h5>
                             <div class="price-tag mb-2">{{ $illustrator->role->name }}</div>
-                            <p class="card-text text-muted">Saya adalah lulusan UI jurusan DKV</p>
+                            <p class="card-text text-muted">{{ Str::limit($illustrator->description, 80) }}</p>
                             <a href="{{ route('user.portofolio', $illustrator->id) }}" class="btn btn-pink btn-sm">Lihat Detail Ilustrator</a>
                         </div>
                     </div>

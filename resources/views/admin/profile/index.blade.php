@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{env('APP_URL')}}/admin/extensions/simple-datatables/style.css">
     <link rel="stylesheet" href="{{env('APP_URL')}}/admin/compiled/css/table-datatable.css">
 @endsection
-    
+
 
 
 
@@ -77,6 +77,12 @@
                             <div class="form-group">
                                 <label for="image">Foto Profile</label>
                                 <input type="file" class="form-control" id="image" name="profile_image" accept="image/*">
+                            </div>
+
+                              <div class="form-group">
+                                <label for="description">Deskripsi</label>
+                                <textarea type="text" class="form-control" id="description" placeholder="Masukkan Deskripsi"
+                                    name="description" required>{{ Auth::user()->description }}</textarea>
                             </div>
 
                             <div class="form-group">

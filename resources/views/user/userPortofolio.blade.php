@@ -9,7 +9,7 @@
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <h1 class="mb-3">Hi, Aku <br>{{ $ilustrators->name }}</h1>
                 <p class="mb-4">
-                Aku Bisa Membuat Ilustrasi digital dengan gaya soft color dan detail wajah yang halus. Cocok untuk hadiah wisuda, pasangan, dan keluarga.
+               {{ $ilustrators->description }}
                 </p>
                 <a href="{{ url('/order') }}" class="btn btn-pink me-2">
                   <i class="bi bi-linkedin"></i></i> Cek Linkedin
